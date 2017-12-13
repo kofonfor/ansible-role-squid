@@ -1,0 +1,6 @@
+- name: install Squid
+  package: name=squid
+
+- name: put /etc/squid/squid.conf
+  template: src=squid.conf dest=/etc/squid/squid.conf backup=yes
+  notify: reload squid
